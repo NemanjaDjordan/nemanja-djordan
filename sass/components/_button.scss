@@ -1,0 +1,57 @@
+.btn {
+  padding: 1.2rem 1.7rem;
+  border: 1px solid $blue;
+  border-radius: .5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  position: relative;
+  margin: 0 1rem 1rem 0;
+  .btn-text {
+    align-items: center;
+    transition: .5s;
+    &::before {
+      transition: .5s;
+      width: 2rem;
+      height: .1rem;
+      margin: auto 1rem auto 0;
+      background-color: $blue;
+      display: inline-block;
+    }
+  }
+}
+.code {
+  background-color: $blue;
+  color: $white;
+  .btn-text {
+    &::before {
+      background-color: $white;
+    }
+  }
+  &:focus {
+    background-color: $white-blue;
+    color: $blue;
+    .btn-text {
+      &::before {
+        background-color: $blue;
+      }
+    }
+  }
+}
+.project {
+  background-color: $white-blue;
+  color: $blue;
+  .btn-text {
+    &::before {
+      background-color: $blue;
+    }
+  }
+  &:focus {
+    background-color: $blue;
+    color: $white;
+    .btn-text {
+      &::before {
+        background-color: $white;
+      }
+    }
+  }
+}

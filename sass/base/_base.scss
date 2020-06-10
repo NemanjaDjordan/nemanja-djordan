@@ -1,0 +1,35 @@
+body {
+  width: 100%;
+  height: 200vh;
+  cursor: none;
+  *::selection {
+    background-color: transparent;
+  }
+}
+.no-scroll {
+  overflow: hidden;
+}
+a,
+label {
+  cursor: none;
+}
+.cursor {
+  position: fixed;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background-color: $black;
+  z-index: 900;
+}
+.cursor-border {
+  position: fixed;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  border: .2rem solid $black;
+  z-index: 800;
+  transition: .1s;
+}
+.cursor-hover {
+  background-color: $white;
+}

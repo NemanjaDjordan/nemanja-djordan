@@ -1,0 +1,57 @@
+.footer {
+  .background {
+    background-color: $blue-grey;
+    padding: 10rem 0;
+    color: $white;
+  }
+  .flex-row {
+    flex-wrap: wrap;
+  }
+  a {
+    color: $black;
+    position: relative;
+    transition: .5s;
+    &:hover {
+      color: $blue;
+    }
+    &:focus {
+      color: $white;
+    }
+  }
+  .left {
+    width: 65%;
+    @include breakpoint(phone) {
+      width: 100%;
+      margin: 0 0 3rem;
+    }
+  }
+  .medium-text {
+    font-size: 2rem 0 0;
+  }
+  .right {
+    margin: 0 0 0 auto;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+  .bottom {
+    width: 100%;
+    font-size: 1.5rem;
+    margin: 8rem 0 0;
+  }
+  .link {
+    margin: 0 0 3rem;
+    text-align: right;
+    @include breakpoint(phone) {
+      text-align: left;
+    }
+  }
+  .name {
+    @include breakpoint(464px) {
+      display: none;
+    }
+  }
+  .rights {
+    margin: 0 0 0 auto;
+  }
+}
