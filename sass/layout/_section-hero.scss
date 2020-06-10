@@ -1,0 +1,37 @@
+.section-hero {
+  color: #b9b9b9;
+  padding: 5rem 0 17rem;
+  .middle {
+    color: $blue;
+    align-items: center;
+  }
+  .text {
+    margin: 0 5% 0 auto;
+    @include breakpoint(phone) {
+      margin: 0;
+    }
+  }
+  .job,
+  .name {
+    width: 100%;
+  }
+  .name {
+    font-size: 2rem;
+    color: $blue;
+    margin: 0 0 1rem;
+  }
+  .job {
+    font-size: 1.5rem;
+  }
+  .line {
+    width: 3rem;
+    height: .25rem;
+    display: inline-block;
+    background-color: $black;
+    transition: 1s;
+    transition-timing-function: cubic-bezier(.22,-0.04,.63,.59);
+    @include breakpoint(phone) {
+      display: none;
+    }
+  }
+}

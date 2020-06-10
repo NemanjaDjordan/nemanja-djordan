@@ -1,0 +1,78 @@
+.section-about {
+  color: $white;
+  background-color: $blue-grey;
+  padding: 0 0 10rem;
+  .quotes {
+    color: $black;
+    font-size: 2.5rem;
+    font-style: italic;
+    padding: 5rem 4rem;
+    background-color: $white;
+    display: inline-block;
+    position: relative;
+    top: -20rem;
+    @include breakpoint(phone) {
+      top: -10rem;
+    }
+  }
+  .icon {
+    width: 1.98rem;
+    height: 1.46rem;
+    position: relative;
+    background: url('../../assets/images/quotes.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .icon:first-child {
+    top: -2rem;
+    left: -2rem;
+    transform: rotateY(180deg);
+  }
+  .icon:last-child {
+    top: 2.5rem;
+    left: 5%;
+    @include breakpoint(577px) {
+      left:  100%;
+    }
+  }
+  .img-wrap {
+    width: 80%;
+    height: 30vh;
+    background-image: url('../../assets/images/about.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    margin: 0 0 0 auto;
+    position: relative;
+    top: -15vh;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+  .bottom-text {
+    margin: -10rem 0 0;
+    @include breakpoint(phone) {
+      margin: 0;
+    }
+  }
+  .big-text,
+  .medium-text {
+    width: 42.5%;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+  .big-text {
+    margin: 0 auto 0 0;
+    font-weight: bold;
+    @include breakpoint(phone) {
+      margin: 0 0 3rem;
+    }
+  }
+  .medium-text {
+    color: $white;
+    .text {
+      margin: 0 0 2rem;
+    }
+  }
+}

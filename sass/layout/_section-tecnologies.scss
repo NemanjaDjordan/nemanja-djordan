@@ -1,0 +1,37 @@
+.section-tecnologies {
+  padding: 10rem 0 5rem;
+  background-color: $blue-grey;
+  color: $white;
+  .icon {
+    width: 80px;
+    height: 90px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    margin: 0 auto 2rem;
+  }
+  $list: html, css, gulp, github, javascript, jquery, sass, git, boostrap, illustrator, photoshop;
+  @each $icon in $list {
+    .icon-#{$icon} {
+      background: url('../../assets/images/#{$icon}.svg');
+    }
+  }
+  .text {
+    width: 100%;
+    text-align: center;
+  }
+  .list {
+    justify-content: space-between;
+    margin: 10rem 0 0;
+  }
+  .item {
+    width: 20rem;
+    margin: 0 0 5rem;
+    @include breakpoint(666px) {
+      width: 10rem;
+    }
+    @include breakpoint(444px) {
+      margin: 0 auto 5rem;
+    }
+  }
+}

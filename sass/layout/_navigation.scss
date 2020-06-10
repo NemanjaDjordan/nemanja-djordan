@@ -1,0 +1,201 @@
+.navigation {
+  position: fixed;
+  z-index: 850;
+  width: 100%;
+  height: 0;
+}
+.navigation-button {
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+  right: 3rem;
+  top: 3rem;
+  z-index: 100;
+	transition: .5s;
+  &::after,
+  &::before {
+		content: '';
+		width: 0;
+		height: 0;
+		position: absolute;
+		border: 0 solid $black;
+		transition: .5s;
+		}
+	&::after {
+		top: -1px;
+		left: -1px;
+		border-top: .2rem solid transparent;
+		border-left: .2rem solid transparent;
+	}
+	&::before {
+		bottom: -1px;
+		right: -1px;
+		border-bottom: .2rem solid transparent;
+		border-right: .2rem solid transparent;
+	}
+	&:hover {
+		border-top-right-radius: 0;
+	  border-bottom-left-radius: 0;
+    &::after {
+      border-top: .2rem solid $black;
+      border-left: .2rem solid $black;
+    }
+    &::before {
+      border-bottom: .2rem solid $black;
+      border-right: .2rem solid $black;
+    }
+    &::before,
+    &::after {
+			width: 100%;
+			height: 100%;
+		}
+	}
+  @include breakpoint(450px) {
+    right: 1.5rem;
+    top: 1.5rem;
+  }
+}
+.navigation-checkbox {
+  display: none;
+}
+.navigation-checkbox:checked ~ .navigation-button {
+  &:hover {
+		border-top-right-radius: 0;
+	  border-bottom-left-radius: 0;
+    &::after {
+      border-top: .2rem solid $white;
+      border-left: .2rem solid $white;
+    }
+    &::before {
+      border-bottom: .2rem solid $white;
+      border-right: .2rem solid $white;
+    }
+    &::before,
+    &::after {
+			width: 100%;
+			height: 100%;
+    }
+  }
+  .navigation-icon {
+    border-top: .2rem solid transparent;
+    &::after {
+      top: -.2rem;
+      transform: rotate(45deg);
+      border: .1rem solid $white;
+    }
+    &::before {
+      top: -.1rem;
+      transform: rotate(-45deg);
+      border: .1rem solid $white;
+    }
+  }
+}
+.navigation-checkbox:checked ~ .navigation-menu {
+  background-color: rgba($light-blue, .8);
+  width: 100%;
+  .navigation-item {
+    right: 0;
+  }
+  @for $i from 1 through 5 {
+    .navigation-item-#{$i} {
+      transition: .2s * $i;
+    }
+  }
+}
+.navigation-icon {
+  margin: 47% auto 0;
+  display: block;
+  width: 3rem;
+  border-top: 2px solid $black;
+  transition: .1s;
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    width: 3rem;
+    border-top: 2px solid $black;
+    margin: 0 auto;
+    transition: 1s;
+  }
+  &::after {
+    position: relative;
+    top: -1.2rem;
+  }
+  &::before {
+    position: relative;
+    top: .6rem;
+  }
+}
+.navigation-menu {
+  overflow: hidden;
+  width: 0;
+  height: 100vh;
+  margin: 0 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  font-size: 3.5rem;
+  transition: .5s;
+}
+.navigation-item {
+  position: relative;
+  right: -50vw;
+  max-width: 43rem;
+  width: 30%;
+  margin: 0 10% 0 40%;
+  padding: .8rem .8rem .8rem 0;
+  a {
+    color: $white;
+  }
+  &:not(:first-child) {
+    margin: .5rem 10% 0 40%;
+  }
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    position: relative;
+    transition: .7s;
+  }
+  &::after {
+    top: .8rem;
+  }
+  &::before {
+    top: -.8rem;
+    margin: 0 0 0 100%;
+  }
+  &:hover::after {
+    width: 100%;
+    height: 1px;
+    background-color: $white;
+  }
+  &:hover::before {
+    background-color: $white;
+    width: 100%;
+    height: 1px;
+    margin: 0;
+  }
+  @include breakpoint(450px) {
+    width: 75%;
+    &:first-child {
+      margin: .5rem auto;
+    }
+    &:not(:first-child) {
+      margin: .5rem auto;
+    }
+  }
+  @include breakpoint(phone-landscape) {
+    padding: .4rem .4rem .4rem 0;
+    width: 35%;
+    &::after {
+      top: .4rem;
+    }
+    &::before {
+      top: -.4rem;
+    }
+  }
+}
