@@ -49,7 +49,7 @@ $( document ).ready(function() {
   // Section hero
   var width = $('.wrapper').width() / 100;
   var widthText = $('.section-hero .text').width() / width;
-  var lineWidth = 95 - widthText;
+  var lineWidth = 98 - widthText;
 
   $sectionHeroLine.css('width', + lineWidth + '%');
   $sectionHeroMiddle.css('margin', '0');
