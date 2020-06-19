@@ -9,6 +9,10 @@
     background-size: 100%;
     background-position: top;
     margin: 0 auto 2rem;
+    @include breakpoint(666px) {
+      width: 70px;
+      height: 80px;
+    }
   }
   $list: html, css, gulp, github, javascript, jquery, sass, git, boostrap, illustrator, photoshop;
   @each $icon in $list {
