@@ -52,6 +52,7 @@ $( document ).ready(function() {
   // Cursor on tablet and phones
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     $cursor.hide();
+    $cursorBorder.hide();
   }
 
   // Navigation
