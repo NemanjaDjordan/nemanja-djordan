@@ -1,11 +1,12 @@
 .footer {
   .background {
     background-color: $blue-grey;
-    padding: 10rem 0;
+    padding: 5rem 0;
     color: $white;
   }
   .flex-row {
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   a {
     color: $black;
@@ -18,15 +19,21 @@
       color: $white;
     }
   }
+  .h1 {
+    margin: 0 0 5rem;
+  }
   .left {
-    width: 65%;
+    margin: 0 1.5rem 3rem 0;
     @include breakpoint(phone) {
       width: 100%;
       margin: 0 0 3rem;
     }
   }
   .medium-text {
-    font-size: 2rem 0 0;
+    font-size: 2rem;
+    .text {
+      margin: 0 0 1rem;
+    }
   }
   .right {
     margin: 0 0 0 auto;
@@ -37,7 +44,7 @@
   .bottom {
     width: 100%;
     font-size: 1.5rem;
-    margin: 8rem 0 0;
+    margin: 3rem 0 0;
   }
   .link {
     margin: 0 0 3rem;

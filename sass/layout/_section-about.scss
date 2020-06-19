@@ -30,10 +30,7 @@
   }
   .icon:last-child {
     top: 2.5rem;
-    left: 5%;
-    @include breakpoint(577px) {
-      left:  100%;
-    }
+    left: 100%;
   }
   .img-wrap {
     width: 80%;
@@ -71,6 +68,7 @@
   }
   .medium-text {
     color: $white;
+    line-height: 2rem;
     .text {
       margin: 0 0 2rem;
     }
