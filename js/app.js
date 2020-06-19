@@ -4,7 +4,7 @@ var $checkbox = $('.navigation-checkbox'),
   $navigationButton = $('.navigation-button'),
   $cursorColorChange = $('.section.about'),
   $sectionHeroLine = $('.section-hero .line'),
-  $sectionHeroMiddle = $('.section-hero .middle'),
+  $sectionHeroMiddle = $('.section-hero .middle .text'),
   $cursor = $('.cursor'),
   $jsNavigation = $('.js-navigation'),
   $cursorBorder = $('.cursor-border');
@@ -29,27 +29,22 @@ $body.on('mousemove', function (e) {
   });
 });
 
-
-// On ESC button regulate navbar
+// Navigation
 $(document).on('keyup', function (evt) {
   if (evt.keyCode == 27) {
     $checkbox.prop('checked', false);
-    $body.removeClass("no-scroll");
+    $body.removeClass("no-scroll body-blur");
   }
 });
-
-// Navigation stop scroll
 $navigationButton.on('click', function () {
-  $body.toggleClass("no-scroll");
+  $body.toggleClass("no-scroll body-blur");
 });
 
-
 $( document ).ready(function() {
-
   // Section hero
-  var width = $('.wrapper').width() / 100;
+  var width = $body.width() / 100;
   var widthText = $('.section-hero .text').width() / width;
-  var lineWidth = 98 - widthText;
+  var lineWidth = 92.2 - widthText;
 
   $sectionHeroLine.css('width', + lineWidth + '%');
   $sectionHeroMiddle.css('margin', '0');
@@ -58,12 +53,21 @@ $( document ).ready(function() {
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     $cursor.hide();
   }
+
+  // Navigation
+  var leftNav = ($body.width() - $('.wrapper').width()) / 2;
+  $navigationButton.css('right', leftNav);
 });
 
 $( window ).resize(function() {
-  var width = $('.wrapper').width() / 100;
+  // Navigation
+  var leftNav = ($body.width() - $('.wrapper').width()) / 2;
+  $navigationButton.css('right', leftNav);
+
+  // Section hero
+  var width = $body.width() / 100;
   var widthText = $('.section-hero .text').width() / width;
-  var lineWidth = 95 - widthText;
+  var lineWidth = 92.2 - widthText;
 
   $sectionHeroLine.css('width', + lineWidth + '%');
   $sectionHeroMiddle.css('margin', '0');
