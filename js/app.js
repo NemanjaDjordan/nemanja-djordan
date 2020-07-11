@@ -6,6 +6,7 @@ var $checkbox = $('.navigation-checkbox'),
   $sectionHeroLine = $('.section-hero .line'),
   $sectionHeroMiddle = $('.section-hero .middle .text'),
   $cursor = $('.cursor'),
+  $navigationItem = $('.navigation-item'),
   $jsNavigation = $('.js-navigation'),
   $cursorBorder = $('.cursor-border');
 
@@ -36,7 +37,7 @@ $(document).on('keyup', function (evt) {
     $body.removeClass("no-scroll body-blur");
   }
 });
-$navigationButton.on('click', function () {
+$navigationButton.add($navigationItem).on('click', function () {
   $body.toggleClass("no-scroll body-blur");
 });
 
