@@ -40,6 +40,10 @@ $(document).on('keyup', function (evt) {
 $navigationButton.add($navigationItem).on('click', function () {
   $body.toggleClass("no-scroll body-blur");
 });
+$navigationItem.on('click', function () {
+  $body.removeClass("no-scroll body-blur");
+  $checkbox.prop('checked', false);
+});
 
 $( document ).ready(function() {
   // Section hero
